@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ANA680 Wine Quality Prediction</title>
+  <style>
+    body{font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;background:#f5f5f5}
+    .card{background:white;padding:28px;border-radius:12px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    label{font-weight:600;display:block;margin-bottom:5px}
+    input{width:100%;padding:9px;box-sizing:border-box}
+    button{margin-top:20px;padding:12px 20px;font-size:16px}
+    .result{margin-top:20px;font-size:22px;font-weight:bold}
+    .error{margin-top:20px;color:#a00}
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>ANA680 Wine Quality Prediction</h1>
+  <p>Enter the physicochemical measurements below.</p>
+  <form method="post">
+    <div class="grid">
+      {% for feature in features %}
+      <div>
+        <label for="{{ feature }}">{{ feature|title }}</label>
+        <input id="{{ feature }}" name="{{ feature }}" type="number" step="any" required>
+      </div>
+      {% endfor %}
+    </div>
+    <button type="submit">Predict Quality</button>
+  </form>
+  {% if prediction is not none %}
+    <div class="result">Predicted Wine Quality: {{ prediction }}</div>
+  {% endif %}
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+</div>
+</body>
+</html>

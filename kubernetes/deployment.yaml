@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wine-quality-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wine-quality
+  template:
+    metadata:
+      labels:
+        app: wine-quality
+    spec:
+      containers:
+        - name: wine-quality
+          image: YOUR_DOCKERHUB_USERNAME/wine-quality-final:latest
+          ports:
+            - containerPort: 5000
