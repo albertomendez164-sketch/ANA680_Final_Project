@@ -1,0 +1,44 @@
+{
+  "best_model": "Random Forest",
+  "split": {
+    "training": 0.7,
+    "validation": 0.15,
+    "testing": 0.15
+  },
+  "validation_results": {
+    "Linear Regression": {
+      "MAE": 0.5045892549819028,
+      "RMSE": 0.654599729808121,
+      "R2": 0.4081090827961158
+    },
+    "Random Forest": {
+      "MAE": 0.48624183006535954,
+      "RMSE": 0.6283480260413534,
+      "R2": 0.45463088157195963
+    },
+    "Gradient Boosting": {
+      "MAE": 0.5022848845344665,
+      "RMSE": 0.6395588410648172,
+      "R2": 0.43499661997342987
+    }
+  },
+  "test_metrics": {
+    "MAE": 0.459983660130719,
+    "RMSE": 0.5950090623794947,
+    "R2": 0.4375433021569002
+  },
+  "rows_after_cleaning": 1359,
+  "features": [
+    "fixed acidity",
+    "volatile acidity",
+    "citric acid",
+    "residual sugar",
+    "chlorides",
+    "free sulfur dioxide",
+    "total sulfur dioxide",
+    "density",
+    "pH",
+    "sulphates",
+    "alcohol"
+  ]
+}
